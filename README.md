@@ -1,21 +1,21 @@
 # Melchior, Balthasar e Casper
 
-Três especialistas para desenvolver software com IA e aprender com o processo: **Melchior pensa a solução, Balthasar constrói e Casper verifica**. Um **Coordenador** recebe seus pedidos em PDF ou texto e conduz o trabalho entre eles.
+Três especialistas para desenvolver software com IA e aprender com o processo: **Melchior pensa a solução, Balthasar constrói e Casper verifica**. O orquestrador **Gendo** recebe seus pedidos em PDF ou texto e conduz o trabalho entre eles.
 
 Este repositório reúne perfis em Markdown, integração com Codex e GitHub Copilot e um fluxo de trabalho reutilizável. O objetivo é melhorar a qualidade das decisões, do código e da sua compreensão sobre o que está sendo entregue.
 
-Os agentes são instruções para a ferramenta de IA que você já utiliza. Ao receber um pedido de implementação, o Coordenador organiza os requisitos, delega as etapas e registra os resultados. A execução depende das ferramentas e permissões do cliente; não há serviço monitorando arquivos em segundo plano.
+Os agentes são instruções para a ferramenta de IA que você já utiliza. Ao receber um pedido de implementação, o Gendo organiza os requisitos, delega as etapas e registra os resultados. A execução depende das ferramentas e permissões do cliente; não há serviço monitorando arquivos em segundo plano.
 
 ## Conheça os agentes
 
 | Agente | Papel | Quando chamar | Entrega principal |
 | --- | --- | --- | --- |
-| [Coordenador](.github/agents/coordenador.agent.md) | Coordenação | Implementar um pedido em PDF ou texto sem transportar contexto manualmente | Registro da tarefa, handoffs, controle de correções e entrega |
+| [Gendo](.github/agents/gendo.agent.md) | Coordenação | Implementar um pedido em PDF ou texto sem transportar contexto manualmente | Registro da tarefa, handoffs, controle de correções e entrega |
 | [Melchior](.github/agents/melchior.agent.md) | Arquiteto | Entender um problema, avaliar alternativas, planejar mudanças | Plano com decisões, arquivos envolvidos, riscos e critérios de aceite |
 | [Balthasar](.github/agents/balthasar.agent.md) | Implementador | Criar funcionalidades, corrigir bugs, refatorar | Mudança de código acompanhada de validação e explicação |
 | [Casper](.github/agents/casper.agent.md) | QA e revisor | Investigar regressões, revisar código e verificar requisitos | Achados reproduzíveis, evidências e limitações da revisão |
 
-Melchior devolve o plano ao Coordenador. Balthasar altera os arquivos. Casper revisa e executa verificações, deixando as correções para Balthasar. O Coordenador mantém o registro compartilhado e encaminha os resultados. Os três especialistas também podem ser usados isoladamente.
+Melchior devolve o plano ao Gendo. Balthasar altera os arquivos. Casper revisa e executa verificações, deixando as correções para Balthasar. O Gendo mantém o registro compartilhado e encaminha os resultados. Os três especialistas também podem ser usados isoladamente.
 
 ## Comece por aqui
 
@@ -27,7 +27,7 @@ cd AgentsTests
 Escolha a ferramenta:
 
 - **Codex:** siga o [guia de instalação e uso](docs/codex.md). O `AGENTS.md` define a coordenação como padrão para pedidos de implementação; os adaptadores em `.codex/agents/` permitem usar os especialistas em versões compatíveis.
-- **GitHub Copilot:** siga o [guia para VS Code e CLI](docs/github-copilot.md). Selecione **Coordenador** para conduzir o fluxo completo.
+- **GitHub Copilot:** siga o [guia para VS Code e CLI](docs/github-copilot.md). Selecione **Gendo** para conduzir o fluxo completo.
 - **Outro assistente:** forneça o conteúdo de um perfil e as instruções do projeto como contexto da conversa.
 
 Depois de instalar os perfis no projeto em que o código será desenvolvido, anexe o PDF ou indique seu caminho e peça:
@@ -36,24 +36,24 @@ Depois de instalar os perfis no projeto em que o código será desenvolvido, ane
 Implemente o pedido descrito em pedidos/solicitacao.pdf.
 ```
 
-Você não precisa repetir o fluxo nem preencher templates: o Coordenador cria `tasks/<id>/tarefa.md`, extrai os requisitos com referências à fonte e conduz as etapas. Veja [como trabalhar com PDFs](docs/pedidos-em-pdf.md), inclusive quando o arquivo contém imagens ou exige OCR.
+Você não precisa repetir o fluxo nem preencher templates: o Gendo cria `tasks/<id>/tarefa.md`, extrai os requisitos com referências à fonte e conduz as etapas. Veja [como trabalhar com PDFs](docs/pedidos-em-pdf.md), inclusive quando o arquivo contém imagens ou exige OCR.
 
 ## Um fluxo que cabe no seu dia a dia
 
 ```mermaid
 flowchart LR
-    U[Você: pedido e PDF] --> O[Coordenador: requisitos e registro]
+    U[Você: pedido e PDF] --> O[Gendo: requisitos e registro]
     O --> M[Melchior: plano]
     M --> B[Balthasar: implementação]
     B --> C[Casper: revisão e QA]
     C -->|Até duas rodadas de correção| B
-    C --> O2[Coordenador: consolida evidências e pendências]
+    C --> O2[Gendo: consolida evidências e pendências]
     O2 --> R[Você: revisão final]
 ```
 
 Por padrão, um pedido de implementação passa pelos três especialistas. Diga “direto com Balthasar” para uma tarefa pequena, “só planeje” para obter análise ou “sem subagentes” para trabalhar na mesma conversa. Perguntas e resumos não iniciam implementação.
 
-O pedido original autoriza avançar entre plano, implementação e QA sem confirmações rotineiras. O Coordenador pede esclarecimento quando faltar uma decisão essencial e encerra com impedimentos registrados se as verificações não forem suficientes. Sem suporte a subagentes, ele executa os papéis sequencialmente na mesma conversa e informa essa limitação.
+O pedido original autoriza avançar entre plano, implementação e QA sem confirmações rotineiras. O Gendo pede esclarecimento quando faltar uma decisão essencial e encerra com impedimentos registrados se as verificações não forem suficientes. Sem suporte a subagentes, ele executa os papéis sequencialmente na mesma conversa e informa essa limitação.
 
 Você define o objetivo, acompanha as decisões e revisa a entrega. Uma revisão de IA acrescenta evidências; a responsabilidade pela aceitação continua com você.
 

@@ -48,7 +48,7 @@ ou não verificado. Uma sugestão de teste ainda não é evidência de execuçã
 ## Plano de Melchior
 
 [Passos por requisito, arquivos envolvidos, contratos, riscos e validação.
-O Coordenador registra a entrega recebida, sem inventar uma análise do especialista.]
+O Gendo registra a entrega recebida, sem inventar uma análise do especialista.]
 
 ## Implementação de Balthasar
 

@@ -6,7 +6,7 @@ Instale ou atualize o VS Code e configure o GitHub Copilot com sua conta. Consul
 o [guia oficial de configuração](https://code.visualstudio.com/docs/copilot/setup).
 O acesso depende da conta e das políticas da sua organização.
 
-Abra a raiz da aplicação. No chat com Copilot, escolha **Coordenador** no seletor
+Abra a raiz da aplicação. No chat com Copilot, escolha **Gendo** no seletor
 de agentes para o fluxo completo. Anexe o PDF quando a leitura for suportada ou
 indique um caminho acessível no ambiente e envie:
 
@@ -15,7 +15,7 @@ Implemente o pedido descrito em pedidos/solicitacao.pdf.
 ```
 
 O perfil conduz o fluxo sem precisar de um prompt de coordenação em cada pedido.
-A configuração não força a seleção do Coordenador em todas as novas conversas:
+A configuração não força a seleção do Gendo em todas as novas conversas:
 confira o seletor ao iniciar uma sessão. Para tarefas isoladas, escolha Melchior,
 Balthasar ou Casper. Os quatro perfis estão em `.github/agents/*.agent.md`.
 
@@ -34,10 +34,10 @@ copilot --version
 copilot
 ```
 
-Use `/agent` e selecione Coordenador. Para uma execução por identificador:
+Use `/agent` e selecione Gendo. Para uma execução por identificador:
 
 ```bash
-copilot --agent=coordenador --prompt "Implemente o pedido em pedidos/solicitacao.pdf."
+copilot --agent=gendo --prompt "Implemente o pedido em pedidos/solicitacao.pdf."
 ```
 
 Consulte a [referência de invocação](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/invoke-custom-agents).
@@ -50,13 +50,13 @@ as ferramentas esperadas:
 
 | Agente | Ferramentas | Uso esperado |
 | --- | --- | --- |
-| Coordenador | read, search, edit, execute, agent | Ler a fonte, manter o registro e delegar |
+| Gendo | read, search, edit, execute, agent | Ler a fonte, manter o registro e delegar |
 | Melchior | read, search | Analisar e planejar |
 | Balthasar | read, search, edit, execute | Implementar e validar |
 | Casper | read, search, execute | Revisar e executar verificações |
 
 O alias `agent` permite invocar outro custom agent nas experiências que oferecem
-essa ferramenta. O Coordenador encaminha o registro e aguarda cada resultado;
+essa ferramenta. O Gendo encaminha o registro e aguarda cada resultado;
 os especialistas não delegam novamente. Confira o suporte e as ferramentas reais
 na [referência oficial](https://docs.github.com/en/copilot/reference/custom-agents-configuration).
 
@@ -77,7 +77,7 @@ sendo o limite de execução. O perfil não concede acesso adicional a arquivos 
    A seção de manutenção desta coleção pode ser omitida.
 3. Copie `templates/tarefa-documento.md`, mantendo esse caminho relativo à raiz.
 4. Copie ou mescle `.github/copilot-instructions.md`, preservando as instruções locais.
-5. Abra o projeto e escolha **Coordenador** em uma nova conversa.
+5. Abra o projeto e escolha **Gendo** em uma nova conversa.
 
 A pasta `tasks/` é criada durante o recebimento de um pedido real. Não é necessário
 copiar `.codex/` se o projeto usar somente Copilot. Revise os arquivos antes de
@@ -87,7 +87,7 @@ versioná-los na equipe. Veja também o [guia de PDFs](pedidos-em-pdf.md).
 
 Se os nomes não aparecerem, confira raiz aberta, extensão `.agent.md`, sintaxe YAML,
 versão e políticas da conta. Reabra o projeto e confira a lista de customizações.
-Para um teste sem implementação, peça ao Coordenador apenas para explicar o fluxo,
+Para um teste sem implementação, peça ao Gendo apenas para explicar o fluxo,
 conferir os perfis e informar as ferramentas disponíveis, sem criar uma tarefa.
 
 No GitHub.com, os perfis precisam estar na branch padrão para descoberta pelo

@@ -8,7 +8,7 @@ Os perfis canônicos ficam em `.github/agents/` e são usados por ambas as ferra
 
 | Nome | Perfil | Responsabilidade |
 | --- | --- | --- |
-| Coordenador | `.github/agents/coordenador.agent.md` | Receber documentos e coordenar o fluxo completo |
+| Gendo | `.github/agents/gendo.agent.md` | Receber documentos e coordenar o fluxo completo |
 | Melchior | `.github/agents/melchior.agent.md` | Arquitetura e planejamento |
 | Balthasar | `.github/agents/balthasar.agent.md` | Implementação e correções |
 | Casper | `.github/agents/casper.agent.md` | QA e revisão |
@@ -19,7 +19,7 @@ Os perfis canônicos ficam em `.github/agents/` e são usados por ambas as ferra
 - Ao ler um `.agent.md` no Codex, use o corpo Markdown como instruções de papel.
   O cabeçalho YAML configura o Copilot e não concede ferramentas ao Codex.
 - Para pedidos de implementação ou correção sem um papel explícito, o agente
-  principal deve ler `.github/agents/coordenador.agent.md` e executar o fluxo
+  principal deve ler `.github/agents/gendo.agent.md` e executar o fluxo
   padrão: receber requisitos → Melchior → Balthasar → Casper → entrega.
   Esta instrução solicita delegação sequencial aos três especialistas quando
   houver ferramentas de subagentes disponíveis; não é preciso repetir o pedido

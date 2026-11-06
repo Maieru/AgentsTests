@@ -23,7 +23,7 @@ Com os arquivos instalados no projeto da aplicação, envie:
 Implemente o pedido descrito em pedidos/solicitacao.pdf.
 ```
 
-O agente principal lê as instruções do projeto e assume o Coordenador. Ele deve
+O agente principal lê as instruções do projeto e assume o papel de Gendo. Ele deve
 criar o registro, encaminhar as etapas aos especialistas e apresentar a entrega.
 O PDF precisa existir nesse caminho, ou estar disponível como anexo que o cliente
 consiga ler. Veja as [orientações de leitura de PDF](pedidos-em-pdf.md).
@@ -37,12 +37,12 @@ seu YAML é uma configuração do Copilot. Veja a
 ## Agentes nativos e disponibilidade
 
 Versões atuais do Codex local aceitam agentes em `.codex/agents/*.toml`.
-Incluímos `melchior`, `balthasar`, `casper` e `coordenador`. Os adaptadores apontam
+Incluímos `melchior`, `balthasar`, `casper` e `gendo`. Os adaptadores apontam
 para os mesmos perfis Markdown e herdam modelo e permissões da sessão.
 
 No fluxo padrão, a conversa principal já coordena; não é necessário criar um
-subagente Coordenador para depois ele delegar novamente. O adaptador
-`coordenador.toml` fica disponível para uso explícito em clientes que permitirem
+subagente Gendo para depois ele delegar novamente. O adaptador
+`gendo.toml` fica disponível para uso explícito em clientes que permitirem
 esse tipo de execução. Prefira manter a coordenação na conversa principal.
 
 As etapas dependentes são sequenciais. Se a delegação não estiver disponível,
@@ -57,7 +57,7 @@ para disponibilidade e configuração da sua versão.
 Inicie uma nova conversa na raiz do projeto e envie:
 
 ```text
-Confira AGENTS.md, o perfil Coordenador e os três especialistas.
+Confira AGENTS.md, o perfil Gendo e os três especialistas.
 Explique o fluxo padrão e informe se esta sessão tem ferramentas de
 subagentes. Não crie uma tarefa, não implemente e não inicie subagentes.
 ```
@@ -97,7 +97,7 @@ de um prompt repetido. Preserve comandos e convenções reais do projeto.
 A seção “Manutenção deste repositório” é específica desta coleção e pode ser omitida.
 
 No PowerShell ou pela interface do editor, copie os mesmos arquivos mantendo a
-estrutura. A pasta `tasks/` é criada pelo Coordenador quando houver uma tarefa.
+estrutura. A pasta `tasks/` é criada pelo Gendo quando houver uma tarefa.
 Abra o projeto de destino em uma nova conversa para carregar as instruções.
 
 Prefira instalação por projeto para começar. Copiar apenas os TOML para

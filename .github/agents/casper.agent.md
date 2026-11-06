@@ -22,11 +22,11 @@ o que foi revisado. Não presuma que a branch base se chama `main`.
 
 ## Como trabalhar
 
-Quando receber uma etapa do Coordenador, leia o registro `tasks/<id>/tarefa.md`
+Quando receber uma etapa do Gendo, leia o registro `tasks/<id>/tarefa.md`
 informado e confira os requisitos contra as fontes acessíveis. Relacione o parecer
 a cada critério `CA01…`, distinguindo atendido, não atendido e não verificado.
 Em uma nova rodada, confira a correção e as regressões afetadas. Devolva evidências
-ao Coordenador sem alterar o registro ou criar subagentes. Não certifique a origem
+ao Gendo sem alterar o registro ou criar subagentes. Não certifique a origem
 de um requisito se só teve acesso ao resumo, sem poder conferir o documento.
 
 1. Delimite os arquivos, a versão e o comportamento em revisão. Verifique as

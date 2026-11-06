@@ -3,7 +3,7 @@
 ## Uso diário
 
 Instale a configuração no repositório da aplicação. No Codex, abra uma conversa
-nesse projeto. No Copilot, selecione **Coordenador**. Anexe o PDF, se o cliente
+nesse projeto. No Copilot, selecione **Gendo**. Anexe o PDF, se o cliente
 permitir sua leitura, ou coloque-o em um caminho acessível ao ambiente e envie:
 
 ```text
@@ -20,7 +20,7 @@ Esses exemplos pressupõem um arquivo real e o projeto de destino aberto.
 Esta coleção não inclui um PDF de cliente nem uma aplicação para implementar.
 Você não precisa escrever os prompts individuais ou preencher os templates.
 
-## O que o Coordenador deve fazer
+## O que o Gendo deve fazer
 
 Ele lê a fonte, cria `tasks/<id>/tarefa.md`, registra requisitos com referências
 de página e chama Melchior, Balthasar e Casper sequencialmente. Avança até a
@@ -41,7 +41,7 @@ verificação real. Inferências ficam separadas dos requisitos explícitos.
 
 ## PDF com texto, tabelas ou imagens
 
-A leitura depende do cliente. O Coordenador pode usar leitura nativa ou um
+A leitura depende do cliente. O Gendo pode usar leitura nativa ou um
 extrator local disponível. Se o ambiente tiver `pdftotext`, uma inspeção possível é:
 
 ```bash
@@ -50,7 +50,7 @@ pdftotext -layout "pedidos/solicitacao.pdf" -
 
 O comando imprime o texto sem modificar o PDF. Não instala dependências e não
 garante interpretar tabelas, diagramas, imagens ou ordem de leitura corretamente.
-O Coordenador deve conferir esses elementos pelas ferramentas disponíveis ou
+O Gendo deve conferir esses elementos pelas ferramentas disponíveis ou
 registrar o que ficou sem leitura. Em PDFs digitalizados, pode ser necessário
 OCR; esse recurso não é instalado nem fornecido pelos perfis.
 
@@ -62,12 +62,12 @@ trecho faltante ou uma versão legível quando houver esse impedimento.
 ## Anexos e ambientes diferentes
 
 Um anexo visível no chat pode não estar disponível ao subagente ou ao terminal.
-O Coordenador confere esse acesso e preserva no registro os requisitos e trechos
+O Gendo confere esse acesso e preserva no registro os requisitos e trechos
 necessários, com origem e limitações. Se você colocar o arquivo no seu computador,
 uma sessão remota só poderá lê-lo quando o arquivo também estiver acessível nela.
 
 O PDF original é preservado. Não há envio automático a serviços de conversão nem
-inclusão automática do documento em commits. O Coordenador registra o mínimo
+inclusão automática do documento em commits. O Gendo registra o mínimo
 necessário e respeita as permissões e o destino definidos para a tarefa.
 
 ## Retomar sem repetir o pedido
@@ -80,7 +80,7 @@ Continue a tarefa tasks/pedido-123/tarefa.md.
 O formato da exportação deve ser CSV.
 ```
 
-O Coordenador lê o registro, confirma a fonte e o estado atual do código e retoma
+O Gendo lê o registro, confirma a fonte e o estado atual do código e retoma
 a etapa pendente. Alterações no PDF ou nos requisitos são registradas como uma
 nova versão/decisão e exigem reavaliar as partes afetadas. O registro não reinicia
 o limite de correções nem torna válido um QA feito antes de uma mudança posterior.

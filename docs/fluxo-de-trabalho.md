@@ -3,20 +3,20 @@
 ## O padrão para implementar
 
 Depois da instalação, você fornece o pedido em texto ou PDF e solicita a
-implementação. O Coordenador organiza e encaminha o trabalho:
+implementação. O Gendo organiza e encaminha o trabalho:
 
 1. **Recebimento:** confere o documento, identifica requisitos e cria o registro.
 2. **Melchior:** analisa o código, as decisões e o plano por requisito.
 3. **Balthasar:** implementa e executa as verificações pertinentes.
 4. **Casper:** revisa a mudança real, os requisitos e as evidências.
-5. **Coordenador:** encaminha correções quando necessário e consolida a entrega.
+5. **Gendo:** encaminha correções quando necessário e consolida a entrega.
 
-As etapas são sequenciais. O Coordenador aguarda cada resultado, atualiza
+As etapas são sequenciais. O Gendo aguarda cada resultado, atualiza
 `tasks/<id>/tarefa.md` e fornece o contexto ao próximo especialista. Você não
 precisa colar os resultados entre agentes ou aprovar cada passagem.
 
 No Codex, `AGENTS.md` orienta o agente principal a coordenar e solicita delegação
-para esse tipo de pedido. No Copilot, selecione o perfil **Coordenador**. O suporte
+para esse tipo de pedido. No Copilot, selecione o perfil **Gendo**. O suporte
 real à delegação depende do cliente; confira os guias de [Codex](codex.md) e
 [Copilot](github-copilot.md).
 
@@ -39,7 +39,7 @@ pela tentativa do usuário, quando esse for o pedido.
 
 ## Um registro para os três especialistas
 
-O Coordenador usa [o template de documento](../templates/tarefa-documento.md)
+O Gendo usa [o template de documento](../templates/tarefa-documento.md)
 para registrar:
 
 - A fonte, versão disponível, páginas lidas e limitações de extração.
@@ -48,9 +48,9 @@ para registrar:
 - Verificações executadas, pareceres, achados e rodadas de correção.
 - Estado atual e próxima ação para retomada.
 
-Só o Coordenador edita o registro. Melchior e Casper devolvem suas análises;
+Só o Gendo edita o registro. Melchior e Casper devolvem suas análises;
 Balthasar altera o código e devolve seu relatório. Isso evita atualizações
-concorrentes do mesmo documento. Se a sessão não puder escrever, o Coordenador
+concorrentes do mesmo documento. Se a sessão não puder escrever, o Gendo
 mantém o registro na conversa e informa a ausência de persistência em arquivo.
 
 Os especialistas recebem a raiz do projeto e o caminho do registro, sem depender
@@ -62,7 +62,7 @@ precisa ter acesso à fonte; um resumo sozinho não comprova sua fidelidade.
 
 O pedido de implementação já autoriza avançar do plano ao código e ao QA. Não há
 aprovação adicional obrigatória por etapa. Se o PDF disser, por exemplo, “exportar
-relatório” sem definir dados e formato, o Coordenador investiga o projeto e pede
+relatório” sem definir dados e formato, o Gendo investiga o projeto e pede
 esclarecimento somente se a definição continuar essencial.
 
 As partes independentes podem avançar. A parte dependente fica em
@@ -83,7 +83,7 @@ de ambiente não justificam repetir comandos indefinidamente sem uma mudança ú
 
 ## Critério de conclusão
 
-O Coordenador marca `concluida` quando todos os critérios obrigatórios estiverem
+O Gendo marca `concluida` quando todos os critérios obrigatórios estiverem
 atendidos com evidência e não houver defeitos relevantes em aberto. Código escrito
 ou uma execução de teste isolada não bastam para afirmar todos os requisitos.
 

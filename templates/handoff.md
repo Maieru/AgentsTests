@@ -1,6 +1,6 @@
 # Passagem de contexto: [origem] → [destino]
 
-[Template opcional para uma troca manual. No fluxo padrão, o Coordenador já
+[Template opcional para uma troca manual. No fluxo padrão, o Gendo já
 encaminha os resultados; indique o caminho do registro tasks/<id>/tarefa.md.]
 
 ## Objetivo e critérios de aceite

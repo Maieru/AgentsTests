@@ -1,7 +1,7 @@
 # Exemplos de prompts
 
 Depois de instalar a configuração na aplicação, o fluxo completo exige apenas
-um pedido curto. No Copilot, selecione **Coordenador**. No Codex, o agente principal
+um pedido curto. No Copilot, selecione **Gendo**. No Codex, o agente principal
 segue o fluxo padrão de `AGENTS.md`. Os exemplos pressupõem arquivos acessíveis
 e não representam resultados de execução.
 
@@ -17,7 +17,7 @@ Ou, se o cliente conseguir ler o anexo:
 Implemente a funcionalidade descrita no PDF anexado.
 ```
 
-O Coordenador cria o registro, encaminha os requisitos aos especialistas e
+O Gendo cria o registro, encaminha os requisitos aos especialistas e
 controla as rodadas de correção. Veja [o guia de PDFs](pedidos-em-pdf.md) e
 [o fluxo completo](fluxo-de-trabalho.md).
 
@@ -38,7 +38,7 @@ Resuma o PDF anexado e liste as dúvidas de negócio. Não implemente.
 
 Os exemplos seguintes são alternativas explícitas ao fluxo padrão. Substitua os
 trechos entre colchetes pelo contexto real. No Copilot, escolha o especialista
-correspondente para a etapa; não é preciso voltar ao Coordenador para um pedido isolado.
+correspondente para a etapa; não é preciso voltar ao Gendo para um pedido isolado.
 
 ## Planejar uma funcionalidade
 
@@ -119,5 +119,5 @@ Consolide os achados com suas evidências e limitações.
 
 Esse último exemplo exige suporte a agentes nativos no cliente. Para executar
 o fluxo sem delegação, você também pode pedir “implemente este pedido sem
-subagentes”. O Coordenador deve identificar os papéis na mesma conversa e
+subagentes”. O Gendo deve identificar os papéis na mesma conversa e
 registrar que a revisão não teve um contexto separado.

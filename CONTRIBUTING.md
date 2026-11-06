@@ -10,7 +10,7 @@ uma implementação fora do escopo ou uma revisão que deixou passar um bug.
 - Acordos compartilhados e roteamento: `AGENTS.md`.
 - Integração do Copilot: `.github/copilot-instructions.md` e o YAML dos perfis.
 - Integração nativa do Codex: `.codex/agents/<nome>.toml`.
-- Recebimento de documentos e coordenação: `.github/agents/coordenador.agent.md`
+- Recebimento de documentos e coordenação: `.github/agents/gendo.agent.md`
   e `templates/tarefa-documento.md`.
 - Instruções de instalação, uso e exemplos: `README.md`, `docs/` e `templates/`.
 
@@ -38,7 +38,7 @@ Exemplos úteis para avaliar o fluxo em um cliente autenticado:
 - Um defeito conhecido deve voltar de Casper para Balthasar, seguido de nova revisão.
   Falhas após a rodada 2 devem permanecer registradas, sem reiniciar a contagem.
 - Um pedido de etapa isolada deve respeitar o escopo. Um especialista delegado
-  não deve iniciar outro Coordenador ou outros subagentes.
+  não deve iniciar outro Gendo ou outros subagentes.
 - Uma retomada deve ler o registro e conferir os arquivos atuais. Sem subagentes,
   o relatório deve identificar a execução dos papéis na mesma conversa.
 

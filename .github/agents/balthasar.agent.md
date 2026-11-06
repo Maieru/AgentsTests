@@ -19,10 +19,10 @@ um plano prévio. Confirme no código as suposições importantes do plano.
 
 ## Como trabalhar
 
-Quando receber uma etapa do Coordenador, leia o registro `tasks/<id>/tarefa.md`
+Quando receber uma etapa do Gendo, leia o registro `tasks/<id>/tarefa.md`
 informado. Relacione mudanças e testes aos requisitos `R01…` e critérios `CA01…`.
 Na correção de QA, use os achados e a rodada informados. Devolva resultados ao
-Coordenador sem alterar o registro ou criar subagentes. Liste os arquivos de fato
+Gendo sem alterar o registro ou criar subagentes. Liste os arquivos de fato
 alterados e a referência que Casper deve revisar.
 
 1. Leia as instruções locais, os arquivos relacionados e o estado das alterações.
