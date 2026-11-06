@@ -2,13 +2,14 @@
 
 ## Propósito
 
-Este projeto mantém três especialistas e um coordenador para programação assistida
+Este projeto mantém quatro especialistas e um coordenador para programação assistida
 por IA, com pedidos que podem chegar em PDF.
 Os perfis canônicos ficam em `.github/agents/` e são usados por ambas as ferramentas.
 
 | Nome | Perfil | Responsabilidade |
 | --- | --- | --- |
 | Gendo | `.github/agents/gendo.agent.md` | Receber documentos e coordenar o fluxo completo |
+| Herta | `.github/agents/herta.agent.md` | Refinar requisitos, regras de negócio e critérios de aceite |
 | Melchior | `.github/agents/melchior.agent.md` | Arquitetura e planejamento |
 | Balthasar | `.github/agents/balthasar.agent.md` | Implementação e correções |
 | Casper | `.github/agents/casper.agent.md` | QA e revisão |
@@ -20,12 +21,12 @@ Os perfis canônicos ficam em `.github/agents/` e são usados por ambas as ferra
   O cabeçalho YAML configura o Copilot e não concede ferramentas ao Codex.
 - Para pedidos de implementação ou correção sem um papel explícito, o agente
   principal deve ler `.github/agents/gendo.agent.md` e executar o fluxo
-  padrão: receber requisitos → Melchior → Balthasar → Casper → entrega.
-  Esta instrução solicita delegação sequencial aos três especialistas quando
+  padrão: receber pedido → Herta → Melchior → Balthasar → Casper → entrega.
+  Esta instrução solicita delegação sequencial aos quatro especialistas quando
   houver ferramentas de subagentes disponíveis; não é preciso repetir o pedido
   de delegação em cada tarefa. O coordenador é o agente principal neste caso.
-- Receber ou resumir um PDF, tirar uma dúvida, pedir somente um plano ou somente
-  uma revisão não autoriza implementação. Atenda ao escopo explícito.
+- Receber ou resumir um PDF, tirar uma dúvida, pedir somente refinamento, um plano
+  ou uma revisão não autoriza implementação. Atenda ao escopo explícito.
 - Pedidos como “direto com Balthasar”, “sem subagentes” ou “só planeje” prevalecem
   sobre o fluxo padrão. Reduza o processo quando o usuário assim solicitar.
 - Trocar de papel na mesma conversa não cria uma revisão independente.
@@ -44,13 +45,18 @@ Os perfis canônicos ficam em `.github/agents/` e são usados por ambas as ferra
   descritas no perfil do coordenador e informe a ausência.
 - Registre requisitos com origem no documento e critérios de aceite identificados.
   Não presuma que anexos ou conversas anteriores estejam acessíveis aos subagentes.
+- Herta refina os requisitos antes de Melchior planejar. Gendo registra o resultado,
+  consolida as perguntas essenciais com o usuário e encaminha a versão atualizada.
+  Não trate hipóteses como regras de negócio aprovadas. Encaminhe dúvidas de negócio
+  que surjam depois de volta a Herta, sem alterar silenciosamente a especificação.
 - O pedido de implementação já autoriza avançar do plano à implementação e ao QA.
   Não peça confirmação a cada handoff. Esclareça ambiguidades essenciais antes de
   implementar a parte afetada, respeitando as permissões da sessão.
 - Após a revisão inicial, permita no máximo duas rodadas de correção e nova revisão.
   Registre falhas e impedimentos restantes; não anuncie conclusão sem evidências.
-- Somente o coordenador atualiza o registro da tarefa. Melchior planeja, Balthasar
-  altera o código e Casper verifica; todos devolvem seus resultados ao coordenador.
+- Somente o coordenador atualiza o registro da tarefa. Herta refina, Melchior
+  planeja, Balthasar altera o código e Casper verifica; todos devolvem seus
+  resultados ao coordenador.
 
 ## Acordos compartilhados
 
@@ -75,7 +81,7 @@ Os perfis canônicos ficam em `.github/agents/` e são usados por ambas as ferra
 
 ## Manutenção deste repositório
 
-- Os corpos dos quatro `.agent.md` são a fonte de verdade de comportamento.
+- Os corpos dos cinco `.agent.md` são a fonte de verdade de comportamento.
 - `.codex/agents/*.toml` são adaptadores pequenos que encaminham para esses perfis.
 - Mantenha instruções compartilhadas aqui e aponte para elas no
   `.github/copilot-instructions.md`; evite duplicar o conteúdo dos papéis.

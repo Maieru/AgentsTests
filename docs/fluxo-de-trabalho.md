@@ -6,10 +6,11 @@ Depois da instalação, você fornece o pedido em texto ou PDF e solicita a
 implementação. O Gendo organiza e encaminha o trabalho:
 
 1. **Recebimento:** confere o documento, identifica requisitos e cria o registro.
-2. **Melchior:** analisa o código, as decisões e o plano por requisito.
-3. **Balthasar:** implementa e executa as verificações pertinentes.
-4. **Casper:** revisa a mudança real, os requisitos e as evidências.
-5. **Gendo:** encaminha correções quando necessário e consolida a entrega.
+2. **Herta:** refina requisitos, regras de negócio, cenários e critérios de aceite.
+3. **Melchior:** analisa o código e planeja a solução técnica para os requisitos refinados.
+4. **Balthasar:** implementa e executa as verificações pertinentes.
+5. **Casper:** revisa a mudança real, os requisitos e as evidências.
+6. **Gendo:** encaminha correções quando necessário e consolida a entrega.
 
 As etapas são sequenciais. O Gendo aguarda cada resultado, atualiza
 `tasks/<id>/tarefa.md` e fornece o contexto ao próximo especialista. Você não
@@ -27,6 +28,7 @@ real à delegação depende do cliente; confira os guias de [Codex](codex.md) e
 | “Implemente o pedido deste PDF” | Coordenação completa |
 | “Corrija o bug descrito abaixo” | Coordenação completa |
 | “Resuma este PDF” ou apenas um anexo | Leitura/resumo, sem implementação |
+| “Herta, só refine este pedido…” | Refinamento com dúvidas e critérios de aceite, sem implementação |
 | “Melchior, só planeje…” | Uma etapa de planejamento |
 | “Casper, revise estas alterações…” | Uma etapa de QA |
 | “Direto com Balthasar…” | Implementação direta no escopo solicitado |
@@ -37,18 +39,18 @@ Uma dúvida ou um pedido de explicação durante uma tarefa não reinicia a
 coordenação. No modo estudo, respeite o ritmo solicitado: uma pista e espera
 pela tentativa do usuário, quando esse for o pedido.
 
-## Um registro para os três especialistas
+## Um registro para os quatro especialistas
 
 O Gendo usa [o template de documento](../templates/tarefa-documento.md)
 para registrar:
 
 - A fonte, versão disponível, páginas lidas e limitações de extração.
 - Requisitos `R01…` e critérios observáveis `CA01…`, com origem e evidências.
-- Dúvidas, decisões, plano, arquivos alterados e estado efetivo da mudança.
+- Dúvidas, decisões, refinamento de Herta, plano, arquivos alterados e estado efetivo da mudança.
 - Verificações executadas, pareceres, achados e rodadas de correção.
 - Estado atual e próxima ação para retomada.
 
-Só o Gendo edita o registro. Melchior e Casper devolvem suas análises;
+Só o Gendo edita o registro. Herta, Melchior e Casper devolvem suas análises;
 Balthasar altera o código e devolve seu relatório. Isso evita atualizações
 concorrentes do mesmo documento. Se a sessão não puder escrever, o Gendo
 mantém o registro na conversa e informa a ausência de persistência em arquivo.
@@ -62,8 +64,15 @@ precisa ter acesso à fonte; um resumo sozinho não comprova sua fidelidade.
 
 O pedido de implementação já autoriza avançar do plano ao código e ao QA. Não há
 aprovação adicional obrigatória por etapa. Se o PDF disser, por exemplo, “exportar
-relatório” sem definir dados e formato, o Gendo investiga o projeto e pede
-esclarecimento somente se a definição continuar essencial.
+relatório” sem definir dados e formato, Herta investiga o contexto e aponta as dúvidas
+essenciais. Gendo consolida as perguntas ao usuário e registra as respostas antes
+do planejamento dependente. Uma parte já clara pode avançar sem aguardar as demais.
+
+Herta define a especificação de comportamento; Melchior define a solução técnica.
+Requisitos não precisam de uma aprovação formal extra quando já estiverem claros.
+Se uma nova dúvida de negócio surgir depois, Gendo devolve a questão a Herta,
+registra a decisão e reavalia o plano e os testes afetados. IDs e decisões anteriores
+são preservados; atualizar requisitos não reinicia o limite de rodadas de QA.
 
 As partes independentes podem avançar. A parte dependente fica em
 `aguardando_esclarecimento`. Permissões do ambiente continuam valendo: configurar

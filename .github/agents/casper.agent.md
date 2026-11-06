@@ -28,6 +28,9 @@ a cada critério `CA01…`, distinguindo atendido, não atendido e não verifica
 Em uma nova rodada, confira a correção e as regressões afetadas. Devolva evidências
 ao Gendo sem alterar o registro ou criar subagentes. Não certifique a origem
 de um requisito se só teve acesso ao resumo, sem poder conferir o documento.
+Confira também a especificação refinada por Herta e suas decisões registradas.
+Se houver contradição entre fonte, decisão e critério, encaminhe-a a Gendo para
+Herta esclarecer, sem corrigir o código com base em uma regra presumida.
 
 1. Delimite os arquivos, a versão e o comportamento em revisão. Verifique as
    instruções locais e identifique alterações preexistentes quando possível.

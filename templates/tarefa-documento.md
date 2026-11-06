@@ -45,6 +45,18 @@ ou não verificado. Uma sugestão de teste ainda não é evidência de execuçã
 | --- | --- | --- | --- | --- | --- |
 | D01 | [Questão, se houver] | [Parte afetada] | [Resposta ou pendência] | [Usuário ou justificativa técnica] | [Aberta ou resolvida] |
 
+## Refinamento de Herta
+
+- Prontidão: [pronto para planejar, parcialmente pronto ou aguardando esclarecimento].
+- Requisitos prontos para planejar: [IDs].
+- Requisitos dependentes de esclarecimento: [IDs, dúvida e impacto].
+- Regras de negócio e cenários: [atores, permissões, dados, erros e limites pertinentes].
+- Alterações propostas/decididas: [versão, IDs afetados, origem e histórico].
+
+[Gendo registra a análise recebida de Herta e mantém as tabelas de requisitos,
+critérios e dúvidas acima coerentes com as decisões. Preserve os IDs e a origem.
+Prontidão para planejar não significa teste executado ou aceite de QA.]
+
 ## Plano de Melchior
 
 [Passos por requisito, arquivos envolvidos, contratos, riscos e validação.

@@ -37,7 +37,7 @@ seu YAML é uma configuração do Copilot. Veja a
 ## Agentes nativos e disponibilidade
 
 Versões atuais do Codex local aceitam agentes em `.codex/agents/*.toml`.
-Incluímos `melchior`, `balthasar`, `casper` e `gendo`. Os adaptadores apontam
+Incluímos `herta`, `melchior`, `balthasar`, `casper` e `gendo`. Os adaptadores apontam
 para os mesmos perfis Markdown e herdam modelo e permissões da sessão.
 
 No fluxo padrão, a conversa principal já coordena; não é necessário criar um
@@ -57,7 +57,7 @@ para disponibilidade e configuração da sua versão.
 Inicie uma nova conversa na raiz do projeto e envie:
 
 ```text
-Confira AGENTS.md, o perfil Gendo e os três especialistas.
+Confira AGENTS.md, o perfil Gendo e os quatro especialistas.
 Explique o fluxo padrão e informe se esta sessão tem ferramentas de
 subagentes. Não crie uma tarefa, não implemente e não inicie subagentes.
 ```
@@ -75,7 +75,9 @@ Melchior, só planeje como adicionar paginação à listagem de produtos.
 Entregue o plano na conversa e não altere arquivos.
 ```
 
-Você também pode pedir “direto com Balthasar” ou “Casper, revise estas alterações”.
+Você também pode pedir “Herta, só refine este pedido”, “direto com Balthasar” ou
+“Casper, revise estas alterações”. Pedir somente refinamento não inicia arquitetura
+ou implementação.
 Para retomar o fluxo coordenado, informe o caminho do registro da tarefa.
 
 ## Usar em outro repositório
@@ -109,7 +111,7 @@ template no projeto, além dos acordos de `AGENTS.md`.
 | Sintoma | O que conferir |
 | --- | --- |
 | Preciso repetir o fluxo | Confirme o fluxo padrão em AGENTS.md no projeto aberto e inicie nova conversa |
-| O perfil não foi encontrado | Confirme os quatro Markdown em .github/agents/ |
+| O perfil não foi encontrado | Confirme os cinco Markdown em .github/agents/ |
 | Instruções parecem diferentes | Confira pasta, instruções globais, AGENTS.override.md e instruções locais |
 | Delegação não está disponível | Confira cliente, versão e configuração; registre a execução na mesma conversa |
 | PDF não está acessível | Confira se o arquivo existe no ambiente que executa a tarefa |

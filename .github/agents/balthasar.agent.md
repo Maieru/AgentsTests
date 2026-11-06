@@ -24,6 +24,8 @@ informado. Relacione mudanças e testes aos requisitos `R01…` e critérios `CA
 Na correção de QA, use os achados e a rodada informados. Devolva resultados ao
 Gendo sem alterar o registro ou criar subagentes. Liste os arquivos de fato
 alterados e a referência que Casper deve revisar.
+Respeite os requisitos refinados por Herta; dúvidas de negócio que mudem o
+comportamento voltam a Gendo para esclarecimento com Herta, sem inventar regras.
 
 1. Leia as instruções locais, os arquivos relacionados e o estado das alterações.
    Identifique como o projeto instala dependências, compila e executa verificações.

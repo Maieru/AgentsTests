@@ -1,6 +1,6 @@
-# Melchior, Balthasar e Casper
+# Gendo, Herta, Melchior, Balthasar e Casper
 
-Três especialistas para desenvolver software com IA e aprender com o processo: **Melchior pensa a solução, Balthasar constrói e Casper verifica**. O orquestrador **Gendo** recebe seus pedidos em PDF ou texto e conduz o trabalho entre eles.
+Quatro especialistas para desenvolver software com IA e aprender com o processo: **Herta refina os requisitos, Melchior pensa a solução, Balthasar constrói e Casper verifica**. O orquestrador **Gendo** recebe seus pedidos em PDF ou texto e conduz o trabalho entre eles.
 
 Este repositório reúne perfis em Markdown, integração com Codex e GitHub Copilot e um fluxo de trabalho reutilizável. O objetivo é melhorar a qualidade das decisões, do código e da sua compreensão sobre o que está sendo entregue.
 
@@ -11,11 +11,12 @@ Os agentes são instruções para a ferramenta de IA que você já utiliza. Ao r
 | Agente | Papel | Quando chamar | Entrega principal |
 | --- | --- | --- | --- |
 | [Gendo](.github/agents/gendo.agent.md) | Coordenação | Implementar um pedido em PDF ou texto sem transportar contexto manualmente | Registro da tarefa, handoffs, controle de correções e entrega |
+| [Herta](.github/agents/herta.agent.md) | Analista de Requisitos | Esclarecer um pedido antes de planejar a solução técnica | Requisitos refinados, regras de negócio, critérios de aceite e dúvidas com impacto |
 | [Melchior](.github/agents/melchior.agent.md) | Arquiteto | Entender um problema, avaliar alternativas, planejar mudanças | Plano com decisões, arquivos envolvidos, riscos e critérios de aceite |
 | [Balthasar](.github/agents/balthasar.agent.md) | Implementador | Criar funcionalidades, corrigir bugs, refatorar | Mudança de código acompanhada de validação e explicação |
 | [Casper](.github/agents/casper.agent.md) | QA e revisor | Investigar regressões, revisar código e verificar requisitos | Achados reproduzíveis, evidências e limitações da revisão |
 
-Melchior devolve o plano ao Gendo. Balthasar altera os arquivos. Casper revisa e executa verificações, deixando as correções para Balthasar. O Gendo mantém o registro compartilhado e encaminha os resultados. Os três especialistas também podem ser usados isoladamente.
+Herta esclarece o que deve ser construído e as regras que precisa atender. Melchior usa essa especificação para planejar a solução técnica. Balthasar altera os arquivos. Casper revisa e executa verificações, deixando as correções para Balthasar. Gendo mantém o registro compartilhado e encaminha os resultados. Os quatro especialistas também podem ser usados isoladamente.
 
 ## Comece por aqui
 
@@ -43,7 +44,8 @@ Você não precisa repetir o fluxo nem preencher templates: o Gendo cria `tasks/
 ```mermaid
 flowchart LR
     U[Você: pedido e PDF] --> O[Gendo: requisitos e registro]
-    O --> M[Melchior: plano]
+    O --> H[Herta: refinamento dos requisitos]
+    H --> M[Melchior: plano]
     M --> B[Balthasar: implementação]
     B --> C[Casper: revisão e QA]
     C -->|Até duas rodadas de correção| B
@@ -51,7 +53,7 @@ flowchart LR
     O2 --> R[Você: revisão final]
 ```
 
-Por padrão, um pedido de implementação passa pelos três especialistas. Diga “direto com Balthasar” para uma tarefa pequena, “só planeje” para obter análise ou “sem subagentes” para trabalhar na mesma conversa. Perguntas e resumos não iniciam implementação.
+Por padrão, um pedido de implementação passa pelos quatro especialistas. Diga “direto com Balthasar” para uma tarefa pequena, “Herta, só refine” para esclarecer os requisitos, “só planeje” para obter análise ou “sem subagentes” para trabalhar na mesma conversa. Perguntas e resumos não iniciam implementação.
 
 O pedido original autoriza avançar entre plano, implementação e QA sem confirmações rotineiras. O Gendo pede esclarecimento quando faltar uma decisão essencial e encerra com impedimentos registrados se as verificações não forem suficientes. Sem suporte a subagentes, ele executa os papéis sequencialmente na mesma conversa e informa essa limitação.
 
@@ -66,6 +68,7 @@ Não há dependências de aplicação, build ou servidor neste repositório. Git
 ## Como aprender com os agentes
 
 - Peça a Melchior a justificativa da decisão e uma alternativa que valha comparar.
+- Peça a Herta para explicar por que uma dúvida muda a regra de negócio e como tornar um critério verificável.
 - Peça a Balthasar para relacionar a mudança aos critérios de aceite e explicar um trecho que você ainda não domina.
 - Peça a Casper um caso concreto que quebraria a implementação e como reproduzi-lo.
 - Antes de aceitar uma mudança, tente explicar com suas palavras por que ela funciona e qual teste confirma isso.
@@ -82,7 +85,7 @@ As respostas incluem explicações curtas por padrão. Para praticar antes de re
 | [Pedidos em PDF](docs/pedidos-em-pdf.md) | Recebimento, extração, páginas, OCR e retomada |
 | [Exemplos de prompts](docs/exemplos.md) | Funcionalidade, bug, revisão e estudo |
 | [Template de tarefa](templates/tarefa.md) | Objetivo, contexto e critérios de aceite |
-| [Registro de pedido em documento](templates/tarefa-documento.md) | Requisitos, plano, implementação, rodadas de QA e evidências |
+| [Registro de pedido em documento](templates/tarefa-documento.md) | Refinamento, requisitos, plano, implementação, rodadas de QA e evidências |
 | [Template de passagem de contexto](templates/handoff.md) | Informações para trocar de agente ou conversa |
 | [Contribuindo](CONTRIBUTING.md) | Como adaptar e avaliar os perfis |
 

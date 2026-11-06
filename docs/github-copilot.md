@@ -16,8 +16,8 @@ Implemente o pedido descrito em pedidos/solicitacao.pdf.
 
 O perfil conduz o fluxo sem precisar de um prompt de coordenação em cada pedido.
 A configuração não força a seleção do Gendo em todas as novas conversas:
-confira o seletor ao iniciar uma sessão. Para tarefas isoladas, escolha Melchior,
-Balthasar ou Casper. Os quatro perfis estão em `.github/agents/*.agent.md`.
+confira o seletor ao iniciar uma sessão. Para tarefas isoladas, escolha Herta,
+Melchior, Balthasar ou Casper. Os cinco perfis estão em `.github/agents/*.agent.md`.
 
 Você pode inspecioná-los em **Chat: Open Customizations**, na seção de agentes.
 Confira o [guia oficial de custom agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents).
@@ -51,6 +51,7 @@ as ferramentas esperadas:
 | Agente | Ferramentas | Uso esperado |
 | --- | --- | --- |
 | Gendo | read, search, edit, execute, agent | Ler a fonte, manter o registro e delegar |
+| Herta | read, search | Refinar requisitos, regras de negócio e critérios de aceite |
 | Melchior | read, search | Analisar e planejar |
 | Balthasar | read, search, edit, execute | Implementar e validar |
 | Casper | read, search, execute | Revisar e executar verificações |
@@ -72,7 +73,7 @@ sendo o limite de execução. O perfil não concede acesso adicional a arquivos 
 
 ## Usar em outro repositório
 
-1. Copie os quatro `.agent.md` para `.github/agents/` no projeto de destino.
+1. Copie os cinco `.agent.md` para `.github/agents/` no projeto de destino.
 2. Copie ou mescle `AGENTS.md`, incluindo o fluxo padrão e os acordos compartilhados.
    A seção de manutenção desta coleção pode ser omitida.
 3. Copie `templates/tarefa-documento.md`, mantendo esse caminho relativo à raiz.

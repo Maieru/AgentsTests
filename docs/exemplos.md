@@ -40,6 +40,28 @@ Os exemplos seguintes são alternativas explícitas ao fluxo padrão. Substitua 
 trechos entre colchetes pelo contexto real. No Copilot, escolha o especialista
 correspondente para a etapa; não é preciso voltar ao Gendo para um pedido isolado.
 
+## Refinar um pedido com Herta
+
+No Copilot, selecione Herta. No Codex, envie:
+
+```text
+Herta, só refine o pedido descrito em pedidos/solicitacao.pdf.
+Leia .github/agents/herta.agent.md. Identifique regras de negócio,
+atores, permissões, cenários e exceções pertinentes. Escreva critérios
+de aceite verificáveis e destaque as dúvidas com impacto no comportamento.
+Separe requisitos explícitos, hipóteses e sugestões opcionais.
+Entregue o refinamento na conversa, sem definir arquitetura ou implementar.
+```
+
+No fluxo completo, você não precisa enviar esse prompt: Gendo chama Herta e
+encaminha o refinamento a Melchior. Para fornecer uma resposta posteriormente:
+
+```text
+Continue a tarefa tasks/pedido-123/tarefa.md.
+Respondendo à dúvida de Herta: somente administradores podem exportar
+o relatório, e a exportação deve respeitar os filtros atuais.
+```
+
 ## Planejar uma funcionalidade
 
 ```text

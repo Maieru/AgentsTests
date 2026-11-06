@@ -23,7 +23,8 @@ Você não precisa escrever os prompts individuais ou preencher os templates.
 ## O que o Gendo deve fazer
 
 Ele lê a fonte, cria `tasks/<id>/tarefa.md`, registra requisitos com referências
-de página e chama Melchior, Balthasar e Casper sequencialmente. Avança até a
+de página e chama Herta, Melchior, Balthasar e Casper sequencialmente. Herta refina
+o pedido antes de Melchior planejar a solução técnica. Gendo avança até a
 entrega ou até um impedimento que não consiga resolver no escopo autorizado.
 Um detalhe técnico reversível pode ser assumido e registrado; uma regra de
 negócio essencial ausente precisa ser esclarecida.
@@ -35,9 +36,15 @@ teste executado:
 | --- | --- | --- | --- |
 | R01: limitar a página a 100 produtos | solicitação fictícia, página física 2 | CA01: rejeitar limite acima de 100 | Enviar uma requisição com limite 101 e conferir o erro definido pela API |
 
-Se o documento não definir o erro, Melchior investiga o contrato existente antes
-de propor um comportamento. A coluna de evidências só é preenchida depois da
+Herta verifica se os comportamentos de negócio e os critérios estão definidos
+ou se precisam de esclarecimento. Melchior investiga o contrato existente para
+planejar como implementá-los. A coluna de evidências só é preenchida depois da
 verificação real. Inferências ficam separadas dos requisitos explícitos.
+
+Por exemplo, “exportar relatório” pode deixar em aberto quais dados exportar, quem
+tem permissão e se os filtros atuais se aplicam. Herta identifica essas lacunas e
+Gendo encaminha as perguntas necessárias a você. Herta não escolhe uma regra
+ausente como se tivesse sido aprovada nem define frameworks ou arquitetura.
 
 ## PDF com texto, tabelas ou imagens
 

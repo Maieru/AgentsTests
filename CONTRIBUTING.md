@@ -12,6 +12,8 @@ uma implementação fora do escopo ou uma revisão que deixou passar um bug.
 - Integração nativa do Codex: `.codex/agents/<nome>.toml`.
 - Recebimento de documentos e coordenação: `.github/agents/gendo.agent.md`
   e `templates/tarefa-documento.md`.
+- Refinamento de requisitos e regras de negócio: `.github/agents/herta.agent.md`;
+  mantenha clara a passagem da especificação para o planejamento de Melchior.
 - Instruções de instalação, uso e exemplos: `README.md`, `docs/` e `templates/`.
 
 Mantenha os adaptadores do Codex pequenos e use os Markdown como fonte de verdade.
@@ -35,6 +37,10 @@ Exemplos úteis para avaliar o fluxo em um cliente autenticado:
   um pedido de resumo do mesmo PDF não deve iniciar implementação.
 - Uma página essencial ilegível ou uma regra contraditória deve gerar uma dúvida
   específica, sem requisito inventado ou bloqueio das partes independentes.
+- Herta deve separar requisitos confirmados de hipóteses, preservar IDs e produzir
+  critérios observáveis. Um pedido “só refine” não deve iniciar arquitetura ou
+  implementação. Uma dúvida de negócio descoberta depois deve retornar a Herta
+  via Gendo, com a decisão registrada e a validação afetada reavaliada.
 - Um defeito conhecido deve voltar de Casper para Balthasar, seguido de nova revisão.
   Falhas após a rodada 2 devem permanecer registradas, sem reiniciar a contagem.
 - Um pedido de etapa isolada deve respeitar o escopo. Um especialista delegado
